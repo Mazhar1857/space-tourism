@@ -1,0 +1,217 @@
+.main-navigation {
+    width: 100%;
+    font-family: "Bellefair", serif;
+}
+
+
+.main-nav-logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4em;
+    grid-column: 1/3;
+    grid-row: 1/2;
+
+    img {
+        max-width: 3em;
+        aspect-ratio: 1;
+    }
+}
+
+
+.main-nav-horizontal-line {
+    width: 100%;
+    height: 1px;
+    background-color: #FFFFFF;
+    opacity: 0.23;
+    position: relative;
+    z-index: 10;
+}
+
+.main-nav-list a {
+    text-decoration: none;
+}
+
+.main-navigation>.main-nav-list::before {
+    content: '';
+    inset: 0;
+    background-color: #FFFFFF;
+    opacity: 0.04;
+    position: absolute;
+}
+
+.main-navigation>.main-nav-list {
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+
+
+.main-navigation>.main-nav-list>*::before {
+    content: counter(name, decimal-leading-zero);
+    padding-right: 11px;
+    position: relative;
+    z-index: -10;
+}
+
+.main-navigation>.main-nav-list>* {
+    counter-increment: name;
+}
+
+@media (min-width:768px) {
+
+    .main-navigation {
+        display: grid;
+        grid-template-columns: 0.414fr 30px 0.565fr;
+        grid-template-rows: 6em;
+        padding: 2.5em 0 0 3.43em;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .mobile-nav-button {
+        display: none;
+    }
+
+    .main-navigation>.main-nav-list {
+        font-size: var(--nav-text);
+        gap: 3em;
+        padding: 0 5.8em 0;
+        grid-column: 2/4;
+        grid-row: 1/2;
+    }
+
+    .main-navigation>.main-nav-list>* {
+        counter-increment: name;
+        padding: 2.1em 0;
+        z-index: 10;
+        border-bottom: 2px solid transparent;
+    }
+
+    .main-navigation>.main-nav-list>*:hover {
+        cursor: pointer;
+        border-bottom: 2px solid #fff;
+    }
+
+    .main-navigation>.main-nav-list>*.active {
+        border-bottom: 2px solid #fff;
+    }
+}
+
+@media (min-width:441px) and (max-width:768px) {
+
+    .main-navigation {
+        height: 6em;
+        display: flex;
+        padding-left: 2.43em;
+        justify-content: space-between;
+
+    }
+
+    .mobile-nav-button {
+        display: none;
+    }
+
+    .main-nav-horizontal-line {
+        display: none;
+    }
+
+    .main-navigation>.main-nav-list {
+        gap: 2.31em;
+        justify-content: flex-end;
+        font-size: 0.875em;
+        padding: 3em 2.43em;
+    }
+
+    .main-navigation>.main-nav-list>*::before {
+        display: none;
+        padding-left: 0;
+
+    }
+
+    .main-navigation>.main-nav-list>* {
+        border: 2px solid transparent;
+        padding: 36px 0;
+        z-index: 10;
+    }
+
+    .main-navigation>.main-nav-list>*.active {
+        border-bottom: 2px solid #fff;
+    }
+
+}
+
+
+
+@media (max-width:440px) {
+
+    .main-navigation {
+        padding: 1.5em;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .main-nav-logo img {
+        max-width: 2.5em;
+    }
+
+    .main-nav-horizontal-line {
+        display: none;
+    }
+
+    .mobile-nav-button {
+        display: block;
+        background: transparent;
+        border: none;
+        z-index: 10;
+
+        img {
+            width: 1.5em;
+            aspect-ratio: 1;
+        }
+    }
+
+    .main-navigation .main-nav-list {
+        display: none;
+    }
+
+
+    .main-navigation>.main-nav-list.mobile-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2em;
+        position: absolute;
+        right: 0;
+        padding: 7.375em 0 0 2em;
+        top: -1.5em;
+        bottom: auto;
+        width: 15.625em;
+        min-height: calc(100dvh + 1.5em);
+
+    }
+
+    .main-navigation>.main-nav-list>* {
+        position: relative;
+        width: 100%;
+    }
+
+    .main-navigation>.main-nav-list>*.active::after {
+        content: "";
+        width: 4px;
+        height: 100%;
+        background-color: #fff;
+        position: absolute;
+        right: 0px;
+    }
+
+    .main-navigation>.main-nav-list.mobile-nav>*::before {
+        display: inline-block;
+        justify-content: flex-start;
+    }
+
+
+}
