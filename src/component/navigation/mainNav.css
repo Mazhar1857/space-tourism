@@ -154,6 +154,8 @@
         position: relative;
     }
 
+
+
     .main-nav-logo img {
         max-width: 2.5em;
     }
@@ -184,14 +186,16 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 2em;
-        position: absolute;
+        position: fixed;
         right: 0;
         padding: 7.375em 0 0 2em;
         top: -1.5em;
-        bottom: auto;
         width: 15.625em;
-        min-height: calc(100dvh + 1.5em);
+        bottom: -100dvh;
+    }
 
+    .model-open {
+        overflow: hidden;
     }
 
     .main-navigation>.main-nav-list>* {

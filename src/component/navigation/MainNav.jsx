@@ -10,6 +10,15 @@ const MainNav = () => {
         setActive(n);
     }
 
+    useEffect(() => {
+        if (mobileNav) {
+            document.documentElement.classList.add('model-open')
+            return () => {
+                document.documentElement.classList.remove('model-open')
+            }
+        }
+    })
+
     const toggleMobileNav = () => {
         setMobileNav((pre) => {
             return !pre;
