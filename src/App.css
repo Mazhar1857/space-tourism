@@ -1,0 +1,91 @@
+:root {
+    --heading-1: 150px;
+    --heading-2: 100px;
+    --heading-3: 56px;
+    --heading-4: 32px;
+    --heading-5: 28px;
+    --sub-heading-1: 28px;
+    --sub-heading-2: 14px;
+    --nav-text: 16px;
+    --body-text: 18px;
+}
+
+
+.container {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100% auto;
+    min-height: 100dvh;
+}
+
+.navigation {
+    position: relative;
+    z-index: 10;
+}
+
+.home.deactive {
+    display: none;
+}
+
+.destination.deactive {
+    display: none;
+}
+
+.crew.deactive {
+    display: none;
+}
+
+
+@media (min-width:768px) {
+    .container.home {
+        background-image: url(/assets/home/background-home-desktop.jpg);
+    }
+
+    .container.destination {
+        background-image: url(/assets/destination/background-destination-desktop.jpg);
+    }
+
+    .container.crew {
+        background-image: url(/assets/crew/background-crew-desktop.jpg);
+    }
+
+    .container.technology {
+        background-image: url(/assets/technology/background-technology-desktop.jpg);
+    }
+}
+
+@media (min-width:441px) and (max-width:768px) {
+    .container.home {
+        background-image: url(/assets/home/background-home-tablet.jpg);
+    }
+
+    .container.destination {
+        background-image: url(/assets/destination/background-destination-tablet.jpg);
+    }
+
+    .container.crew {
+        background-image: url(/assets/crew/background-crew-tablet.jpg);
+    }
+
+    .container.technology {
+        background-image: url(/assets/technology/background-technology-tablet.jpg);
+    }
+}
+
+@media (max-width:440px) {
+    .container.home {
+        background-image: url(/assets/home/background-home-mobile.jpg);
+    }
+
+    .container.destination {
+        background-image: url(/assets/destination/background-destination-mobile.jpg);
+    }
+
+    .container.crew {
+        background-image: url(/assets/crew/background-crew-mobile.jpg);
+    }
+
+    .container.technology {
+        background-image: url(/assets/technology/background-technology-mobile.jpg);
+    }
+}
