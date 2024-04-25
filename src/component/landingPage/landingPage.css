@@ -1,1 +1,168 @@
-  
+  .landing-page {
+      display: grid;
+      color: #fff;
+  }
+
+  .landing-page .explore {
+      aspect-ratio: 1;
+      border-radius: 100vmax;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #0B0D17;
+  }
+
+  .landing-page .description {
+
+      h1 {
+          font-family: "Bellefair", serif;
+          font-weight: normal;
+      }
+
+      h5 {
+          font-family: "Barlow Condensed", sans-serif;
+          font-weight: normal;
+          color: #D0D6F9;
+      }
+
+      p {
+          font-family: "Barlow Condensed", sans-serif;
+          font-weight: lighter;
+      }
+  }
+
+
+  @media (min-width:768px) {
+
+      .landing-page {
+          margin: 5em 10.43em;
+          align-items: flex-end;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr;
+          grid-template-areas: 'description explore';
+      }
+
+      .landing-page .description {
+          grid-area: description;
+          width: 450px;
+
+          h1 {
+              font-size: var(--heading-1);
+              margin: 24px 0;
+          }
+
+          h5 {
+              font-size: var(--heading-5);
+              letter-spacing: 4.75px;
+
+          }
+
+          p {
+              font-size: 18px;
+
+              line-height: 32px;
+          }
+      }
+
+      .landing-page .explore {
+          font-family: "Bellefair", serif;
+          font-size: 32px;
+          width: 274px;
+          grid-area: explore;
+          justify-self: end;
+          outline: 0px solid rgba(255, 255, 255, 0.1);
+          transition: 0.3s;
+      }
+
+      .landing-page .explore:hover {
+          cursor: pointer;
+          border: none;
+          outline: 88px solid rgba(255, 255, 255, 0.1);
+      }
+
+  }
+
+  @media (min-width:441px) and (max-width:768px) {
+
+      .landing-page {
+          margin-top: 6.625em;
+          gap: 9.75em;
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 1fr;
+          grid-template-areas: 'description'
+              'explore';
+      }
+
+      .landing-page .description {
+          grid-area: description;
+          width: 450px;
+          justify-self: center;
+          text-align: center;
+
+          h1 {
+              font-size: var(--heading-1);
+              margin: 24px 0;
+          }
+
+          h5 {
+              font-size: 20px;
+              letter-spacing: 4.75px;
+          }
+
+
+          p {
+              font-size: 16px;
+              letter-spacing: 2.7px;
+              line-height: 32px;
+          }
+
+
+      }
+
+      .landing-page .explore {
+          width: 242px;
+          grid-area: explore;
+          justify-self: center;
+      }
+  }
+
+  @media (max-width:440px) {
+
+      .landing-page {
+          text-align: center;
+          margin: 58px 1.5em 0;
+          justify-items: center;
+          gap: 81px;
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 1fr;
+          grid-template-areas: 'description'
+              'explore';
+      }
+
+      h1 {
+          font-size: 80px;
+          margin: 24px 0;
+      }
+
+      h5 {
+          font-size: 16px;
+          letter-spacing: 4.75px;
+      }
+
+      p {
+          font-size: 15px;
+          letter-spacing: 2.7px;
+          line-height: 25px;
+      }
+
+      .landing-page .description {
+          grid-area: description;
+      }
+
+      .landing-page .explore {
+          grid-area: explore;
+          width: 150px;
+      }
+
+  }
