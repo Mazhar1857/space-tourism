@@ -3,7 +3,7 @@ import './crew.css'
 import data from '../../data.json';
 import CrewNav from '../navigation/CrewNav';
 const Crew = () => {
-    const [isActive, setIsActive] = useState(3);
+    const [isActive, setIsActive] = useState(1);
 
     const toggleCrew = (n) => {
         setIsActive(n)

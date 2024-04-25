@@ -4,7 +4,7 @@ import './mainNav.css';
 const MainNav = ({ toggleNav }) => {
 
     const [mobileNav, setMobileNav] = useState(false);
-    const [IsActive, setActive] = useState(2);
+    const [IsActive, setActive] = useState(1);
 
     const handleActiveNav = (n) => {
         setActive(n);

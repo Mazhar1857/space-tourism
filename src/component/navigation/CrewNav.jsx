@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './crewNav.css';
 
 const CrewNav = ({ toggleCrew }) => {
-    const [isActive, setIsActive] = useState(3);
+    const [isActive, setIsActive] = useState(1);
 
     const toggleCrewMember = (n) => {
         toggleCrew(n);
