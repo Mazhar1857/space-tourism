@@ -1,30 +1,45 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import DestinationNav from '../navigation/DestinationNav';
 import data from '../../data.json';
+import './destination.css';
 
 const Destination = () => {
-    return (
-        <div className='destination-page'>
-            <h1 className='destination-heading'>Pick your destination</h1>
-            <div className='destinaiton-navigation'><DestinationNav /></div>
-            <figure className='globe'>
-                <img src={data["destinations"][0]["images"]["png"]} alt="this is moon" />
-            </figure>
-            <div className='planet'>
-                <h1>Moon</h1>
-                <p>See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2  and Apollo 11 landing sites.</p>
-                <div className='distance-time'>
-                    <div>
-                        <div>AVG. DISTANCE</div>
-                        <div>384,400 KM</div>
-                    </div>
-                    <div>
-                        <div>Est. travel time</div>
-                        <div>3 days</div>
-                    </div>
-                </div>
-            </div>
 
+    const [isActive, setIsActive] = useState(1)
+
+    const toggleGlobe = (n) => {
+        setIsActive(n)
+    }
+
+    return (
+        <div className='destination-page-parent'>
+            <div className='destination-page'>
+                <h1 className='destination-heading'>PICK YOUR DESTINATION</h1>
+                <div className='destinaiton-navigation'><DestinationNav toggleGlobe={toggleGlobe} /></div>
+                <figure className='globe-pic'>
+                    {Object.entries(data)[0][1].map((item, index) => {
+                        return <img className={isActive === (index + 1) ? 'active' : 'deactive'} src={item["images"]["png"]} alt="this is moon" />
+                    })}
+                </figure>
+
+                {Object.entries(data)[0][1].map((item, index) => {
+                    return <div className={`globe-detail ${isActive === (index + 1) ? 'active' : 'deactive'}`}>
+                        <h1>{item["name"]}</h1>
+                        <p>{item["description"]}</p>
+                        <div className='distance-time'>
+                            <div>
+                                <div>AVG. DISTANCE</div>
+                                <div>{item["distance"]}</div>
+                            </div>
+                            <div>
+                                <div>Est. travel time</div>
+                                <div>{item["travel"]}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                })}
+            </div>
         </div>
     )
 }
