@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import MainNav from './component/navigation/MainNav';
 import LandingPage from './component/landingPage/LandingPage';
@@ -7,14 +7,29 @@ import Crew from './component/crew/Crew';
 
 function App() {
   const [isActive, setIsActive] = useState(1);
+  const [bg, setBg] = useState('home')
 
   const toggleNav = (n) => {
     setIsActive(n)
   }
 
+  useEffect(() => {
+    switch (isActive) {
+      case 1:
+        setBg('home');
+        break;
+      case 2:
+        setBg('destination');
+        break;
+      case 3:
+        setBg('crew');
+        break;
+    }
+  }, [isActive])
+
 
   return (
-    <div className='container destination'>
+    <div className={`container ${bg}`}>
       <div className='navigation'>
         <MainNav toggleNav={toggleNav} />
       </div>
