@@ -1,0 +1,33 @@
+.crew-nav {
+    display: flex;
+    gap: 1.5em;
+}
+
+.crew-nav>*.active::before {
+    content: '';
+    inset: 0;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 100vmax;
+}
+
+.crew-nav>*::after {
+    content: '';
+    inset: 0;
+    position: absolute;
+    background-color: #ffffff;
+    opacity: 0.1744;
+    border-radius: 100vmax;
+}
+
+.crew-nav>* {
+    width: 15px;
+    aspect-ratio: 1;
+    background-color: #000000;
+    border-radius: 100vmax;
+    position: relative;
+}
+
+.crew-nav>*:hover{
+    cursor: pointer;
+}
