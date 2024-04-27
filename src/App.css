@@ -16,11 +16,13 @@
     background-size: cover;
     background-position: 100% auto;
     min-height: 100dvh;
+
 }
 
 .navigation {
     position: relative;
     z-index: 10;
+    display: flex;
 }
 
 .home.deactive {
@@ -63,8 +65,11 @@
         background-image: url(/assets/destination/background-destination-tablet.jpg);
     }
 
+
+
     .container.crew {
         background-image: url(/assets/crew/background-crew-tablet.jpg);
+        position: relative;
     }
 
     .container.technology {
@@ -81,8 +86,10 @@
         background-image: url(/assets/destination/background-destination-mobile.jpg);
     }
 
+
     .container.crew {
         background-image: url(/assets/crew/background-crew-mobile.jpg);
+        min-height: 100dvh;
     }
 
     .container.technology {

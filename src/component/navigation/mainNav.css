@@ -1,6 +1,7 @@
 .main-navigation {
     width: 100%;
     font-family: "Bellefair", serif;
+    justify-content: space-between;
 }
 
 
