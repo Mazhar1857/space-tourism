@@ -4,6 +4,7 @@ import MainNav from './component/navigation/MainNav';
 import LandingPage from './component/landingPage/LandingPage';
 import Destination from './component/destination/Destination';
 import Crew from './component/crew/Crew';
+import Technology from './component/technology/Technology';
 
 function App() {
   const [isActive, setIsActive] = useState(1);
@@ -23,6 +24,9 @@ function App() {
         break;
       case 3:
         setBg('crew');
+        break;
+      case 4:
+        setBg('technology');
         break;
     }
   }, [isActive])
@@ -46,6 +50,9 @@ function App() {
         <Crew />
       </div>
 
+      <div className={`crew ${isActive === 4 ? 'active' : 'deactive'}`}>
+        <Technology />
+      </div>
     </div>
   )
 }

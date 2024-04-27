@@ -9,20 +9,20 @@ const CrewNav = ({ toggleCrew }) => {
         setIsActive(n);
     }
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setIsActive((pre) => {
-                return (pre % 4) + 1;
-            })
-            toggleCrew(((isActive) % 4) + 1)
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         setIsActive((pre) => {
+    //             return (pre % 4) + 1;
+    //         })
+    //         toggleCrew(((isActive) % 4) + 1)
 
-        }, 3000);
+    //     }, 3000);
 
-        return () => {
-            clearInterval(interval);
-        }
+    //     return () => {
+    //         clearInterval(interval);
+    //     }
 
-    })
+    // })
 
     return (
         <div className='crew-nav'>
