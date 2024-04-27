@@ -12,14 +12,12 @@ const Crew = () => {
         <div className='crew-page-parent'>
             <div className='crew-page'>
                 <div className='crew-heading'>MEET YOUR CREW</div>
-                <div className='crew-pic'>
-
-                    {Object.entries(data)[1][1].map((item, index) => {
-                        return <img className={isActive === (index + 1) ? 'active' : 'deactive'} src={item["images"]["png"]} alt="" />
-                    })}
-                </div>
+                {Object.entries(data)[1][1].map((item, index) => {
+                    return <div className={`crew-pic ${isActive === (index + 1) ? 'active' : 'deactive'}`}>
+                        <div className={`img ${isActive === (index + 1) ? 'active' : 'deactive'}`} style={{ backgroundImage: `url(${item["images"]["png"]})` }} ></div>
+                    </div>
+                })}
                 <div className='crew-navigation'><CrewNav toggleCrew={toggleCrew} /></div>
-
                 {Object.entries(data)[1][1].map((item, index) => {
 
                     return <div className={`crew-detail ${isActive === (index + 1) ? 'active' : 'deactive'}`}>
