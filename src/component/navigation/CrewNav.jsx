@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './crewNav.css';
 
-const CrewNav = ({ toggleCrew }) => {
+const CrewNav = ({ toggleCrew, active }) => {
     const [isActive, setIsActive] = useState(1);
 
     const toggleCrewMember = (n) => {
         toggleCrew(n);
         setIsActive(n);
     }
+
+    useEffect(() => {
+        setIsActive(active)
+    }, [active])
 
     return (
         <div className='crew-nav'>
@@ -17,7 +21,6 @@ const CrewNav = ({ toggleCrew }) => {
             <div className={isActive === 4 ? 'active' : ''} onClick={() => toggleCrewMember(4)}></div>
         </div>
     )
-
 }
 
 export default CrewNav

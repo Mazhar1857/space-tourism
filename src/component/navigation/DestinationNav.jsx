@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './destinationNav.css';
 
-const DestinationNav = ({ toggleGlobe }) => {
+const DestinationNav = ({ toggleGlobe, active }) => {
 
     const [isActive, setIsActive] = useState(1);
 
@@ -9,6 +9,10 @@ const DestinationNav = ({ toggleGlobe }) => {
         toggleGlobe(n);
         setIsActive(n);
     }
+
+    useEffect(() => {
+        setIsActive(active);
+    }, [active])
 
     return (
         <div className='destination-nav'>

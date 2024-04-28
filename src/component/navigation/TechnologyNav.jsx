@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import './technologyNav.css';
 
-const TechnologyNav = ({ toggleTechnology }) => {
+const TechnologyNav = ({ toggleTechnology, active }) => {
 
     const [isActive, setIsActive] = useState(1);
 
     const toggleTechnologyNav = (n) => {
         toggleTechnology(n);
         setIsActive(n);
-
     }
+
+    useEffect(() => {
+        setIsActive(active);
+    }, [active])
 
     return (
         <div className='technology-nav'>
