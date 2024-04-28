@@ -10,21 +10,6 @@ const DestinationNav = ({ toggleGlobe }) => {
         setIsActive(n);
     }
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setIsActive((pre) => {
-                return (pre % 4) + 1;
-            })
-            toggleGlobe(((isActive) % 4) + 1)
-
-        }, 3000);
-
-        return () => {
-            clearInterval(interval);
-        }
-
-    })
-
     return (
         <div className='destination-nav'>
             <div className={isActive === 1 ? 'active' : ''} onClick={() => toggleDestinationNav(1)}>MOON</div>
