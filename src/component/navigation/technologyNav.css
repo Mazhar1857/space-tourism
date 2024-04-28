@@ -1,15 +1,15 @@
 .technology-nav {
-
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 
+    justify-content: space-between;
+    height: 100%;
 }
 
-.technology-nav>* {}
-
-
 @media (min-width:768px) {
+    .technology-nav {
+        flex-direction: column;
+    }
+
     .technology-nav>* {
         color: #fff;
         display: flex;
@@ -21,8 +21,7 @@
         border: 1px solid #fff;
     }
 
-    .technology-nav>*.active,
-    .technology-nav>*.active:hover {
+    .technology-nav>*.active {
         color: #000;
         background-color: white;
     }
@@ -34,8 +33,10 @@
     }
 }
 
-
 @media (min-width:441px) and (max-width:768px) {
+    .technology-nav {
+        flex-direction: row;
+    }
 
     .technology-nav>* {
         color: #fff;
