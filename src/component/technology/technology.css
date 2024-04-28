@@ -1,5 +1,261 @@
 .technology-page {
     color: #fff;
-    
+    display: grid;
 }
 
+.technology-heading {
+    grid-area: heading;
+    font-family: "Barlow Condensed", sans-serif;
+}
+
+.technology-image {
+    grid-area: img;
+}
+
+.technology-image.deactive {
+    display: none;
+}
+
+.technology-navigation {
+    grid-area: nav;
+
+}
+
+.technology-detail {
+    grid-area: detail;
+
+    .technology-terminology {
+        font-family: "Barlow Condensed", sans-serif;
+    }
+
+    .technology-name {
+        font-family: "Bellefair", serif;
+    }
+
+    .technology-description {
+        font-family: "Barlow Condensed", sans-serif;
+    }
+}
+
+.technology-detail.deactive {
+    display: none;
+}
+
+@media (min-width:768px) {
+
+    .technology-page-parent {
+        min-height: calc(100vh - 136px);
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .technology-page {
+        width: 100%;
+        margin-left: 166.5px;
+        align-items: center;
+        grid-template-columns: 80px auto auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: 'heading heading heading'
+            'nav detail img';
+    }
+
+    .technology-heading::before {
+        content: '03';
+        font-size: 28px;
+        padding-right: 20px;
+        opacity: 0.25;
+        font-family: "Barlow Condensed", sans-serif;
+    }
+
+    .technology-heading {
+        padding-bottom: 26px;
+        font-size: 28px;
+        letter-spacing: 4.72px;
+    }
+
+    .technology-image {
+        max-height: 527px;
+        max-width: 515px;
+        justify-self: end;
+
+        >.landscape {
+            display: none;
+        }
+
+    }
+
+    .technology-navigation {
+        height: 304px;
+    }
+
+    .technology-detail {
+        max-width: 479px;
+        height: 325px;
+        margin-left: 80px;
+
+        .technology-terminology {
+            font-size: 1em;
+            letter-spacing: 2.7px;
+            font-weight: lighter;
+        }
+
+        .technology-name {
+            font-size: 56px;
+            padding: 11px 0 17px 0;
+            font-weight: normal;
+        }
+
+        .technology-description {
+            font-size: 18px;
+            line-height: 32px;
+            font-weight: lighter;
+            letter-spacing: 1px;
+        }
+    }
+
+}
+
+@media (min-width:441px) and (max-width:768px) {
+
+    .technology-page-parent {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .technology-page {
+        width: 100%;
+        justify-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: 'heading'
+            'img'
+            'nav'
+            'detail';
+    }
+
+    .technology-heading::before {
+        content: '03';
+        font-size: 20px;
+        padding-right: 16px;
+        opacity: 0.25;
+        font-family: "Barlow Condensed", sans-serif;
+    }
+
+    .technology-heading {
+        font-size: 20px;
+        letter-spacing: 3.38px;
+        padding: 40px 0 60px 39px;
+        justify-self: flex-start;
+    }
+
+    .technology-image {
+        width: 100%;
+
+        >.portrait {
+            display: none;
+        }
+    }
+
+    .technology-navigation {
+        min-width: 210px;
+        margin: 56px 0 44px 0;
+    }
+
+    .technology-detail {
+        max-width: 458px;
+        text-align: center;
+
+        .technology-terminology {
+            font-size: 16px;
+            letter-spacing: 2.7px;
+            font-weight: lighter;
+        }
+
+        .technology-name {
+            font-size: 40px;
+            padding: 16px 0;
+            font-weight: normal;
+        }
+
+        .technology-description {
+            font-size: 16px;
+            line-height: 28px;
+            font-weight: lighter;
+            letter-spacing: 0.15px;
+        }
+    }
+
+}
+
+@media (max-width:440px) {
+
+    .technology-page-parent {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .technology-page {
+        width: 100%;
+        justify-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: 'heading'
+            'img'
+            'nav'
+            'detail';
+    }
+
+    .technology-heading::before {
+        content: '03';
+        font-size: 20px;
+        padding-right: 16px;
+        opacity: 0.25;
+        font-family: "Barlow Condensed", sans-serif;
+    }
+
+    .technology-heading {
+        font-size: 20px;
+        letter-spacing: 3.38px;
+        padding: 24px 0 32px 0;
+    }
+
+    .technology-image {
+        max-width: 100%;
+
+        >.portrait {
+            display: none;
+        }
+    }
+
+    .technology-navigation {
+        min-width: 210px;
+        margin: 34px 0 36px 0;
+    }
+
+    .technology-detail {
+        margin-inline: 24px;
+        text-align: center;
+
+        .technology-terminology {
+            font-size: 14px;
+            letter-spacing: 2.36px;
+            font-weight: lighter;
+        }
+
+        .technology-name {
+            font-size: 24px;
+            padding: 9px 0 16px 0;
+            font-weight: normal;
+        }
+
+        .technology-description {
+            font-size: 15px;
+            line-height: 25px;
+            font-weight: lighter;
+        }
+    }
+
+}
